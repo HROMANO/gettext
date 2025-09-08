@@ -1,0 +1,10 @@
+name = "gettext"
+description = "A wrapper lib for gettext"
+version = "0.1.0-dev"
+
+authors = ["H. ROMANO"]
+maintainers = ["H. ROMANO <shuihuzhuan@free.fr>"]
+maintainers-logins = ["shuihuzhuan"]
+licenses = "MIT OR Apache-2.0 WITH LLVM-exception"
+website = "https://github.com/HROMANO/gettext"
+tags = ["i18n", "gettext"]

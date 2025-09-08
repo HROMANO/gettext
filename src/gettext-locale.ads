@@ -1,0 +1,20 @@
+with Interfaces.C;
+
+package Gettext.Locale is
+
+   type Locale_Category is new Interfaces.C.int;
+
+   function LC_CTYPE return Locale_Category;
+   function LC_COLLATE return Locale_Category;
+   function LC_MONETARY return Locale_Category;
+   function LC_NUMERIC return Locale_Category;
+   function LC_TIME return Locale_Category;
+   function LC_MESSAGES return Locale_Category;
+   function LC_ALL return Locale_Category;
+
+   function Get_Locale (Category : Locale_Category := LC_ALL) return String;
+   function Set_Locale
+     (Category : Locale_Category := LC_ALL; Locale : String := "")
+      return Boolean;
+
+end Gettext.Locale;
