@@ -123,7 +123,7 @@ package body Gettext is
    function Get_Text_Domain_Codeset (Domain_Name : String) return String is
       use type Interfaces.C.Strings.chars_ptr;
 
-      Result : Interfaces.C.Strings.chars_ptr :=
+      Result : constant Interfaces.C.Strings.chars_ptr :=
         libintl_h.bind_textdomain_codeset
           (Interfaces.C.Strings.New_String (Domain_Name),
            Interfaces.C.Strings.Null_Ptr);
