@@ -2,7 +2,9 @@ with Interfaces.C;
 
 package Gettext.Locale is
 
-   type Locale_Category is new Interfaces.C.int;
+   type Locale_Category (<>) is tagged private;
+
+   function Value (Self : Locale_Category) return Interfaces.C.int;
 
    function LC_CTYPE return Locale_Category;
    function LC_COLLATE return Locale_Category;
@@ -16,5 +18,11 @@ package Gettext.Locale is
    function Set_Locale
      (Category : Locale_Category := LC_ALL; Locale : String := "")
       return Boolean;
+
+private
+
+   type Locale_Category is tagged record
+      Value : Interfaces.C.int;
+   end record;
 
 end Gettext.Locale;

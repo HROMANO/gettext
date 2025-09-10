@@ -30,7 +30,7 @@ package body Gettext is
          (libintl_h.dcgettext
             (Interfaces.C.Strings.New_String (Domain_Name),
              Interfaces.C.Strings.New_String (Message_Id),
-             Interfaces.C.int (Category))));
+             Category.Value)));
 
    ----------------------------------------------------------------------------
 
@@ -70,7 +70,7 @@ package body Gettext is
              Interfaces.C.Strings.New_String (Message_Id_Singular),
              Interfaces.C.Strings.New_String (Message_Id_Plural),
              Interfaces.C.unsigned_long (N),
-             Interfaces.C.int (Category))));
+             Category.Value)));
 
    ----------------------------------------------------------------------------
 

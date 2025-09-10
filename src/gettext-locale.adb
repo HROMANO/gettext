@@ -4,13 +4,18 @@ package body Gettext.Locale is
 
    ----------------------------------------------------------------------------
 
+   function Value (Self : Locale_Category) return Interfaces.C.int
+   is (Self.Value);
+
+   ----------------------------------------------------------------------------
+
    function LC_CTYPE return Locale_Category is
 
       function internal return Interfaces.C.int
       with Import => True, Convention => C, External_Name => "ada_ctype";
 
    begin
-      return Locale_Category (internal);
+      return (Value => internal);
    end LC_CTYPE;
 
    ----------------------------------------------------------------------------
@@ -21,7 +26,7 @@ package body Gettext.Locale is
       with Import => True, Convention => C, External_Name => "ada_collate";
 
    begin
-      return Locale_Category (internal);
+      return (Value => internal);
    end LC_COLLATE;
 
    ----------------------------------------------------------------------------
@@ -32,7 +37,7 @@ package body Gettext.Locale is
       with Import => True, Convention => C, External_Name => "ada_monetary";
 
    begin
-      return Locale_Category (internal);
+      return (Value => internal);
    end LC_MONETARY;
 
    ----------------------------------------------------------------------------
@@ -43,7 +48,7 @@ package body Gettext.Locale is
       with Import => True, Convention => C, External_Name => "ada_numeric";
 
    begin
-      return Locale_Category (internal);
+      return (Value => internal);
    end LC_NUMERIC;
 
    ----------------------------------------------------------------------------
@@ -54,7 +59,7 @@ package body Gettext.Locale is
       with Import => True, Convention => C, External_Name => "ada_time";
 
    begin
-      return Locale_Category (internal);
+      return (Value => internal);
    end LC_TIME;
 
    ----------------------------------------------------------------------------
@@ -65,7 +70,7 @@ package body Gettext.Locale is
       with Import => True, Convention => C, External_Name => "ada_messages";
 
    begin
-      return Locale_Category (internal);
+      return (Value => internal);
    end LC_MESSAGES;
 
    ----------------------------------------------------------------------------
@@ -76,7 +81,7 @@ package body Gettext.Locale is
       with Import => True, Convention => C, External_Name => "ada_all";
 
    begin
-      return Locale_Category (internal);
+      return (Value => internal);
    end LC_ALL;
 
    ----------------------------------------------------------------------------
@@ -91,8 +96,7 @@ package body Gettext.Locale is
    begin
       return
         Interfaces.C.Strings.Value
-          (internal
-             (Interfaces.C.int (Category), Interfaces.C.Strings.Null_Ptr));
+          (internal (Category.Value, Interfaces.C.Strings.Null_Ptr));
    end Get_Locale;
 
    ----------------------------------------------------------------------------
@@ -110,9 +114,7 @@ package body Gettext.Locale is
       with Convention => C, Import => True, External_Name => "setlocale";
 
       Result : Interfaces.C.Strings.chars_ptr :=
-        internal
-          (Interfaces.C.int (Category),
-           Interfaces.C.Strings.New_String (Locale));
+        internal (Category.Value, Interfaces.C.Strings.New_String (Locale));
 
    begin
       if Result /= Interfaces.C.Strings.Null_Ptr then
