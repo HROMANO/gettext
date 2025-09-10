@@ -1,4 +1,5 @@
 #include <locale.h>
+#include <libintl.h> /* For LC_MESSAGES on some OSes */
 
 #include "macros.h"
 

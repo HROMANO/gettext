@@ -23,6 +23,15 @@ project Gettext is
       for Switches ("Ada") use ("-Es"); --  Symbolic traceback
    end Binder;
 
+   package Linker is
+      case Gettext_Config.Alire_Host_OS is
+         when "windows" =>
+            for Linker_Options use ("-lintl");
+         when "linux" => null;
+         when others => null; -- Don't know
+      end case;
+   end Linker;
+
    package Install is
       for Artifacts (".") use ("share");
    end Install;
