@@ -1,6 +1,6 @@
 with Interfaces.C;
 
-package Gettext.Locale is
+package Gettexts.Locale is
 
    type Locale_Category (<>) is tagged private;
 
@@ -25,4 +25,4 @@ private
       Value : Interfaces.C.int;
    end record;
 
-end Gettext.Locale;
+end Gettexts.Locale;

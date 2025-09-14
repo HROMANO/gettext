@@ -1,6 +1,6 @@
 with Interfaces.C.Strings;
 
-package body Gettext.Locale is
+package body Gettexts.Locale is
 
    ----------------------------------------------------------------------------
 
@@ -113,7 +113,7 @@ package body Gettext.Locale is
          return Interfaces.C.Strings.chars_ptr
       with Convention => C, Import => True, External_Name => "setlocale";
 
-      Result : Interfaces.C.Strings.chars_ptr :=
+      Result : constant Interfaces.C.Strings.chars_ptr :=
         internal (Category.Value, Interfaces.C.Strings.New_String (Locale));
 
    begin
@@ -124,4 +124,4 @@ package body Gettext.Locale is
       end if;
    end Set_Locale;
 
-end Gettext.Locale;
+end Gettexts.Locale;

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-08 15:26+0200\n"
+"POT-Creation-Date: 2025-09-14 21:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,16 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/example.adb:64
+#: src/example.adb:81
 msgid "Translation: 'This is an example' = 'This is an example'"
+msgstr ""
+
+#: src/example.adb:87
+msgctxt "Context"
+msgid "An example"
+msgstr ""
+
+#: src/example.adb:89
+msgctxt "Other"
+msgid "An example"
 msgstr ""
