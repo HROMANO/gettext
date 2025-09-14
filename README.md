@@ -6,7 +6,7 @@ windows. Don't know for other OSes.
 
 Before calling the `gettext` family translation functions:
 
-- You *must* set the locale using `Gettexts.Locale.Set_Locale` (even a call
+- You **must** set the locale using `Gettexts.Locale.Set_Locale` (even a call
   with no arguments is enough but required).
 - You should set the directory and the domain name with
   `Gettexts.Set_Text_Domain_Directory` and `Gettexts.Set_Text_Domain`.
