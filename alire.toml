@@ -30,7 +30,7 @@ But if your code doesn't have unbalanced tick marks (like in `'Class`), you
 can still use it to produce and update `.po` files (see `update.sh` in example
 directory). As a workaround, you can balance tick marks with comments `--  '`.
 """
-version = "25.9.0"
+version = "25.9.2"
 
 authors = ["H. ROMANO"]
 maintainers = ["H. ROMANO <shuihuzhuan@free.fr>"]
