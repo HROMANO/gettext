@@ -86,26 +86,26 @@ package Gettexts is
       Category            : Gettexts.Locale.Locale_Category) return String;
 
    --  Get the current default message catalog.
-   function Get_Text_Domain return String;
+   function Get_Domain_Name return String;
 
    --  Set the current default message catalog to 'Domain_Name'.
    --  If 'Domain_Name' is "", reset to the default ("messages").
-   function Set_Text_Domain (Domain_Name : String := "") return Boolean;
+   function Set_Domain_Name (Domain_Name : String := "") return Boolean;
 
    --  Get the current directory for message catalog.
-   function Get_Text_Domain_Directory (Domain_Name : String) return String;
+   function Get_Domain_Directory (Domain_Name : String) return String;
 
    --  Specify that the 'Domain_Name' message catalog will be found
    --  in 'Directory' rather than in the system locale data base.
-   function Set_Text_Domain_Directory
+   function Set_Domain_Directory
      (Domain_Name : String; Directory : String) return Boolean;
 
    --  Get the current character encoding for 'Domain_Name'.
-   function Get_Text_Domain_Codeset (Domain_Name : String) return String;
+   function Get_Domain_Codeset (Domain_Name : String) return String;
 
    --  Specify the character encoding in which the messages from the
    --  'Domain_Name' message catalog will be returned.
-   function Set_Text_Domain_Codeset
+   function Set_Domain_Codeset
      (Domain_Name : String; Code_Set : String) return Boolean;
 
    ----------------------------------------------------------------------------
@@ -180,23 +180,23 @@ package Gettexts is
       Category            : Gettexts.Locale.Locale_Category) return String
    renames Get_Plural_Text_With_Domain_Context_Category;
 
-   function textdomain return String renames Get_Text_Domain;
+   function textdomain return String renames Get_Domain_Name;
 
    function textdomain (Domain_Name : String := "") return Boolean
-   renames Set_Text_Domain;
+   renames Set_Domain_Name;
 
    function bindtextdomain (Domain_Name : String) return String
-   renames Get_Text_Domain_Directory;
+   renames Get_Domain_Directory;
 
    function bindtextdomain
      (Domain_Name : String; Directory : String) return Boolean
-   renames Set_Text_Domain_Directory;
+   renames Set_Domain_Directory;
 
    function bind_textdomain_codeset (Domain_Name : String) return String
-   renames Get_Text_Domain_Codeset;
+   renames Get_Domain_Codeset;
 
    function bind_textdomain_codeset
      (Domain_Name : String; Code_Set : String) return Boolean
-   renames Set_Text_Domain_Codeset;
+   renames Set_Domain_Codeset;
 
 end Gettexts;

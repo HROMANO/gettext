@@ -17,7 +17,7 @@ Before calling the `gettext` family translation functions:
 You can choose between:
 
 - Standard names used in C language: `gettext`, `ngettext`, `pgettext`, `dgettext`…
-- More readable Ada names: `Get_Text`, `N_Get_Text`, `Particular_Get_Text`…
+- More readable Ada names: `Get_Text`, `Get_Plural_Text`, `Get_Text_With_Context`…
 
 # Limits
 
@@ -25,7 +25,7 @@ There's no support for Ada in
 [xgettext](https://www.gnu.org/software/gettext/manual/html_node/xgettext-Invocation.html).
 But if your code doesn't have unbalanced tick marks (like in `'Class`), you
 can still use it to produce and update `.po` files (see `update.sh` in example
-directory).
+directory). As a workaround, you can balance tick marks with comments `--  '`.
 
 # Note
 

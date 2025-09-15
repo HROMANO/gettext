@@ -33,46 +33,44 @@ begin
 
    Put_Line
      ("Text domain directory at start = "
-      & Gettexts.Get_Text_Domain_Directory (Domain));
+      & Gettexts.Get_Domain_Directory (Domain));
 
-   if Gettexts.Set_Text_Domain_Directory (Domain, "share/locale/") then
+   if Gettexts.Set_Domain_Directory (Domain, "share/locale/") then
       Put ("Set_Text_Domain_Directory success: ");
    else
       Put ("Set_Text_Domain_Directory failure: ");
    end if;
 
    Put_Line
-     ("Text domain directory = "
-      & Gettexts.Get_Text_Domain_Directory (Domain));
+     ("Text domain directory = " & Gettexts.Get_Domain_Directory (Domain));
 
    --  Set domain
 
    New_Line;
 
-   Put_Line ("Text domain at start = " & Gettexts.Get_Text_Domain);
+   Put_Line ("Text domain at start = " & Gettexts.Get_Domain_Name);
 
-   if Gettexts.Set_Text_Domain (Domain) then
+   if Gettexts.Set_Domain_Name (Domain) then
       Put ("Set_Text_Domain success: ");
    else
       Put ("Set_Text_Domain failure: ");
    end if;
 
-   Put_Line ("Text_domain = " & Gettexts.Get_Text_Domain);
+   Put_Line ("Text_domain = " & Gettexts.Get_Domain_Name);
 
    --  Set codeset
 
    New_Line;
 
-   Put_Line
-     ("Codeset at start = " & Gettexts.Get_Text_Domain_Codeset (Domain));
+   Put_Line ("Codeset at start = " & Gettexts.Get_Domain_Codeset (Domain));
 
-   if Gettexts.Set_Text_Domain_Codeset (Domain, "utf8") then
+   if Gettexts.Set_Domain_Codeset (Domain, "utf8") then
       Put ("Set_Text_Domain_Codeset success: ");
    else
       Put ("Set_Text_Domain_Codeset failure: ");
    end if;
 
-   Put_Line ("Codeset = " & Gettexts.Get_Text_Domain_Codeset (Domain));
+   Put_Line ("Codeset = " & Gettexts.Get_Domain_Codeset (Domain));
 
    --  Translate
 

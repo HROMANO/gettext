@@ -256,13 +256,13 @@ package body Gettexts is
 
    ----------------------------------------------------------------------------
 
-   function Get_Text_Domain return String
+   function Get_Domain_Name return String
    is (Interfaces.C.Strings.Value
          (libintl_h.textdomain (Interfaces.C.Strings.Null_Ptr)));
 
    ----------------------------------------------------------------------------
 
-   function Set_Text_Domain (Domain_Name : String := "") return Boolean is
+   function Set_Domain_Name (Domain_Name : String := "") return Boolean is
       use type Interfaces.C.Strings.chars_ptr;
    begin
       if libintl_h.textdomain (Interfaces.C.Strings.New_String (Domain_Name))
@@ -272,11 +272,11 @@ package body Gettexts is
       else
          return False;
       end if;
-   end Set_Text_Domain;
+   end Set_Domain_Name;
 
    ----------------------------------------------------------------------------
 
-   function Get_Text_Domain_Directory (Domain_Name : String) return String
+   function Get_Domain_Directory (Domain_Name : String) return String
    is (Interfaces.C.Strings.Value
          (libintl_h.bindtextdomain
             (Interfaces.C.Strings.New_String (Domain_Name),
@@ -284,7 +284,7 @@ package body Gettexts is
 
    ----------------------------------------------------------------------------
 
-   function Set_Text_Domain_Directory
+   function Set_Domain_Directory
      (Domain_Name : String; Directory : String) return Boolean
    is
       use type Interfaces.C.Strings.chars_ptr;
@@ -298,11 +298,11 @@ package body Gettexts is
       else
          return False;
       end if;
-   end Set_Text_Domain_Directory;
+   end Set_Domain_Directory;
 
    ----------------------------------------------------------------------------
 
-   function Get_Text_Domain_Codeset (Domain_Name : String) return String is
+   function Get_Domain_Codeset (Domain_Name : String) return String is
       use type Interfaces.C.Strings.chars_ptr;
 
       Result : constant Interfaces.C.Strings.chars_ptr :=
@@ -315,11 +315,11 @@ package body Gettexts is
       else
          return Interfaces.C.Strings.Value (Result);
       end if;
-   end Get_Text_Domain_Codeset;
+   end Get_Domain_Codeset;
 
    ----------------------------------------------------------------------------
 
-   function Set_Text_Domain_Codeset
+   function Set_Domain_Codeset
      (Domain_Name : String; Code_Set : String) return Boolean
    is
       use type Interfaces.C.Strings.chars_ptr;
@@ -333,7 +333,7 @@ package body Gettexts is
       else
          return False;
       end if;
-   end Set_Text_Domain_Codeset;
+   end Set_Domain_Codeset;
 
    ----------------------------------------------------------------------------
 
