@@ -9,8 +9,8 @@ Before calling the `gettext` family translation functions:
 - You **must** set the locale using `Gettexts.Locale.Set_Locale` (even a call
   with no arguments is enough but required).
 - You should set the directory and the domain name with
-  `Gettexts.Set_Text_Domain_Directory` and `Gettexts.Set_Text_Domain`.
-- You should set the codeset with `Gettexts.Set_Text_Domain_Codeset`.
+  `Gettexts.Set_Domain_Directory` and `Gettexts.Set_Domain_Name`.
+- You should set the codeset with `Gettexts.Set_Domain_Codeset`.
 
 # Function names
 
