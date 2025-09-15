@@ -17,23 +17,20 @@ private package libintl_h is
    function dcgettext
      (uu_domainname : Interfaces.C.Strings.chars_ptr;
       uu_msgid      : Interfaces.C.Strings.chars_ptr;
-      uu_category   : int)
-      return Interfaces.C.Strings.chars_ptr
+      uu_category   : int) return Interfaces.C.Strings.chars_ptr
    with Import => True, Convention => C, External_Name => "dcgettext";
 
    function ngettext
      (uu_msgid1 : Interfaces.C.Strings.chars_ptr;
       uu_msgid2 : Interfaces.C.Strings.chars_ptr;
-      uu_n      : unsigned_long)
-      return Interfaces.C.Strings.chars_ptr
+      uu_n      : unsigned_long) return Interfaces.C.Strings.chars_ptr
    with Import => True, Convention => C, External_Name => "ngettext";
 
    function dngettext
      (uu_domainname : Interfaces.C.Strings.chars_ptr;
       uu_msgid1     : Interfaces.C.Strings.chars_ptr;
       uu_msgid2     : Interfaces.C.Strings.chars_ptr;
-      uu_n          : unsigned_long)
-      return Interfaces.C.Strings.chars_ptr
+      uu_n          : unsigned_long) return Interfaces.C.Strings.chars_ptr
    with Import => True, Convention => C, External_Name => "dngettext";
 
    function dcngettext
@@ -41,8 +38,7 @@ private package libintl_h is
       uu_msgid1     : Interfaces.C.Strings.chars_ptr;
       uu_msgid2     : Interfaces.C.Strings.chars_ptr;
       uu_n          : unsigned_long;
-      uu_category   : int)
-      return Interfaces.C.Strings.chars_ptr
+      uu_category   : int) return Interfaces.C.Strings.chars_ptr
    with Import => True, Convention => C, External_Name => "dcngettext";
 
    function textdomain
