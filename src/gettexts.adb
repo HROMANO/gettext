@@ -13,7 +13,7 @@ package body Gettexts is
 
    ----------------------------------------------------------------------------
 
-   function Particular_Get_Text
+   function Get_Text_With_Context
      (Context : String; Message_Id : String) return String
    is
 
@@ -32,11 +32,11 @@ package body Gettexts is
          return Interfaces.C.Strings.Value (Translation);
       end if;
 
-   end Particular_Get_Text;
+   end Get_Text_With_Context;
 
    ----------------------------------------------------------------------------
 
-   function Domain_Get_Text
+   function Get_Text_With_Domain
      (Domain_Name : String; Message_Id : String) return String
    is (Interfaces.C.Strings.Value
          (libintl_h.dgettext
@@ -45,7 +45,7 @@ package body Gettexts is
 
    ----------------------------------------------------------------------------
 
-   function Domain_Particular_Get_Text
+   function Get_Text_With_Domain_Context
      (Domain_Name : String; Context : String; Message_Id : String)
       return String
    is
@@ -65,11 +65,11 @@ package body Gettexts is
          return Interfaces.C.Strings.Value (Translation);
       end if;
 
-   end Domain_Particular_Get_Text;
+   end Get_Text_With_Domain_Context;
 
    ----------------------------------------------------------------------------
 
-   function Domain_Category_Get_Text
+   function Get_Text_With_Domain_Category
      (Domain_Name : String;
       Message_Id  : String;
       Category    : Gettexts.Locale.Locale_Category) return String
@@ -81,7 +81,7 @@ package body Gettexts is
 
    ----------------------------------------------------------------------------
 
-   function Domain_Category_Particular_Get_Text
+   function Get_Text_With_Domain_Context_Category
      (Domain_Name : String;
       Context     : String;
       Message_Id  : String;
@@ -104,11 +104,11 @@ package body Gettexts is
          return Interfaces.C.Strings.Value (Translation);
       end if;
 
-   end Domain_Category_Particular_Get_Text;
+   end Get_Text_With_Domain_Context_Category;
 
    ----------------------------------------------------------------------------
 
-   function N_Get_Text
+   function Get_Plural_Text
      (Message_Id_Singular : String; Message_Id_Plural : String; N : Natural)
       return String
    is (Interfaces.C.Strings.Value
@@ -119,7 +119,7 @@ package body Gettexts is
 
    ----------------------------------------------------------------------------
 
-   function N_Particular_Get_Text
+   function Get_Plural_Text_With_Context
      (Context             : String;
       Message_Id_Singular : String;
       Message_Id_Plural   : String;
@@ -148,11 +148,11 @@ package body Gettexts is
       else
          return Interfaces.C.Strings.Value (Translation);
       end if;
-   end N_Particular_Get_Text;
+   end Get_Plural_Text_With_Context;
 
    ----------------------------------------------------------------------------
 
-   function Domain_N_Get_Text
+   function Get_Plural_Text_With_Domain
      (Domain_Name         : String;
       Message_Id_Singular : String;
       Message_Id_Plural   : String;
@@ -166,7 +166,7 @@ package body Gettexts is
 
    ----------------------------------------------------------------------------
 
-   function Domain_N_Particular_Get_Text
+   function Get_Plural_Text_With_Domain_Context
      (Domain_Name         : String;
       Context             : String;
       Message_Id_Singular : String;
@@ -199,11 +199,11 @@ package body Gettexts is
          return Interfaces.C.Strings.Value (Translation);
       end if;
 
-   end Domain_N_Particular_Get_Text;
+   end Get_Plural_Text_With_Domain_Context;
 
    ----------------------------------------------------------------------------
 
-   function Domain_Category_N_Get_Text
+   function Get_Plural_Text_With_Domain_Category
      (Domain_Name         : String;
       Message_Id_Singular : String;
       Message_Id_Plural   : String;
@@ -217,7 +217,7 @@ package body Gettexts is
              Interfaces.C.unsigned_long (N),
              Category.Value)));
 
-   function Domain_Category_N_Particular_Get_Text
+   function Get_Plural_Text_With_Domain_Context_Category
      (Domain_Name         : String;
       Context             : String;
       Message_Id_Singular : String;
@@ -252,7 +252,7 @@ package body Gettexts is
          return Interfaces.C.Strings.Value (Translation);
       end if;
 
-   end Domain_Category_N_Particular_Get_Text;
+   end Get_Plural_Text_With_Domain_Context_Category;
 
    ----------------------------------------------------------------------------
 

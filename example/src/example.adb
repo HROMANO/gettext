@@ -7,7 +7,7 @@ procedure Example is
 
    function Tr (Item : String) return String renames Gettexts.Get_Text;
    function Ctr (Context : String; Item : String) return String
-   renames Gettexts.Particular_Get_Text;
+   renames Gettexts.Get_Text_With_Context;
 
    Domain : constant String := "example";
 
